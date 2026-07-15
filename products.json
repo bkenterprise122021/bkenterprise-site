@@ -10,6 +10,16 @@
     "icon": "🔧"
   },
   {
+    "id": "bk-community-status",
+    "name": "BK Community Status",
+    "description": "A community outage and status reporting tool built for fast local updates.",
+    "url": "https://script.google.com/macros/s/AKfycbyjGIH9e-q7WqXuOWMoHYAeOKTRMgjVwsG7yTIuvnG2QRfW-P-yIvoJjyu-OPwvKxac/exec",
+    "status": "Live",
+    "category": "Utilities",
+    "featured": true,
+    "icon": "⚡"
+  },
+  {
     "id": "bk-service-pro",
     "name": "BK Service Pro",
     "description": "A service business platform for bookings, customers, jobs and operational workflows.",
@@ -20,14 +30,14 @@
     "icon": "🔧"
   },
   {
-    "id": "bk-edusuite",
-    "name": "BK EduSuite",
-    "description": "Teacher report generation, learner performance tracking and school administration tools.",
-    "url": "https://script.google.com/macros/s/AKfycbxMeLFJzlx9D1cdKweM2vCbSkCwMxSA3QgZEZPX1XCXUERe8eDgJ90WQRjnyTqLrjxn/exec",
-    "status": "Beta",
-    "category": "Education",
+    "id": "ai-website-prompt-generator",
+    "name": "AI Website Prompt Generator",
+    "description": "Generate structured website-building prompts from a simple project idea.",
+    "url": "#",
+    "status": "Coming Soon",
+    "category": "AI Tools",
     "featured": true,
-    "icon": "🎓"
+    "icon": "🤖"
   },
   {
     "id": "bk-teacher_reviews",
@@ -35,6 +45,16 @@
     "description": "Capture pupils termly reports with the ease of AI.",
     "url": "https://script.google.com/macros/s/AKfycbwgXvqhucEukARgze_CEdmN8YvvGWnS7c2VdcqYQSApzjXfhcAEN7PBnt5J3GnjwGb0rQ/exec",
     "status": "Live",
+    "category": "Education",
+    "featured": true,
+    "icon": "🎓"
+  },
+  {
+    "id": "bk-edusuite",
+    "name": "BK EduSuite",
+    "description": "Teacher report generation, learner performance tracking and school administration tools.",
+    "url": "https://script.google.com/macros/s/AKfycbxMeLFJzlx9D1cdKweM2vCbSkCwMxSA3QgZEZPX1XCXUERe8eDgJ90WQRjnyTqLrjxn/exec",
+    "status": "Beta",
     "category": "Education",
     "featured": true,
     "icon": "🎓"
@@ -48,25 +68,5 @@
     "category": "Games",
     "featured": true,
     "icon": "🎮"
-  },
-  {
-    "id": "bk-community-status",
-    "name": "BK Community Status",
-    "description": "A community outage and status reporting tool built for fast local updates.",
-    "url": "https://script.google.com/macros/s/AKfycbyjGIH9e-q7WqXuOWMoHYAeOKTRMgjVwsG7yTIuvnG2QRfW-P-yIvoJjyu-OPwvKxac/exec",
-    "status": "Live",
-    "category": "Utilities",
-    "featured": true,
-    "icon": "⚡"
-  },
-  {
-    "id": "ai-website-prompt-generator",
-    "name": "AI Website Prompt Generator",
-    "description": "Generate structured website-building prompts from a simple project idea.",
-    "url": "#",
-    "status": "Coming Soon",
-    "category": "AI Tools",
-    "featured": true,
-    "icon": "🤖"
-  },
+  }
 ]
