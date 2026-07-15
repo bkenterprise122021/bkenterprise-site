@@ -149,7 +149,7 @@ function handleProductClick(event, productId, url) {
 
   if (url === '#') {
     event.preventDefault();
-    alert('This product link is not added yet. Update products.json with the live Apps Script URL when ready.');
+    alert('Be sure to check back later. Coming Soon.');
   }
 }
 
