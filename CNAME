@@ -1,1 +1,4 @@
-bkenterprise.co.za
+Type: CNAME
+Name / Origin: www.bkenterprise.co.za.
+TTL: 3600
+Value / Destination: bkenterprise122021.github.io.
