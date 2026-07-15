@@ -56,3 +56,7 @@ YOUR-GITHUB-USERNAME.github.io.
 ```
 
 Replace `YOUR-GITHUB-USERNAME` with your actual GitHub username.
+
+## Product update
+
+This version includes the updated product list supplied on 2026-07-15, including BK Teacher Reviews, BK EduSuite and BK Question Guesser.
