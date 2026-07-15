@@ -1,10 +1,74 @@
 const fallbackProducts = [
-  { id: 'bk-service-pro', name: 'BK Service Pro', description: 'A service business platform for bookings, customers, jobs and operational workflows.', url: '#', status: 'Coming Soon', category: 'Business Tools', featured: true, icon: '🔧' },
-  { id: 'bk-edusuite', name: 'BK EduSuite', description: 'Teacher report generation, learner performance tracking and school administration tools.', url: '#', status: 'Coming Soon', category: 'Education', featured: true, icon: '🎓' },
-  { id: 'bk-question-guesser', name: 'BK Question Guesser', description: 'A multiplayer browser quiz game with rounds, timers and live scoring.', url: '#', status: 'Beta', category: 'Games', featured: true, icon: '🎮' },
-  { id: 'bk-community-status', name: 'BK Community Status', description: 'A community outage and status reporting tool built for fast local updates.', url: '#', status: 'Live', category: 'Utilities', featured: true, icon: '⚡' },
-  { id: 'ai-website-prompt-generator', name: 'AI Website Prompt Generator', description: 'Generate structured website-building prompts from a simple project idea.', url: '#', status: 'Coming Soon', category: 'AI Tools', featured: false, icon: '🤖' },
-  { id: 'bk-budget-app', name: 'BK Budget App', description: 'A simple monthly budget tracker powered by Google Sheets and web app logic.', url: '#', status: 'Coming Soon', category: 'Finance', featured: false, icon: '💰' }
+  {
+    "id": "plumbing-booking-system",
+    "name": "Plumbing Booking System",
+    "description": "Plumbing booking.",
+    "url": "https://script.google.com/macros/s/AKfycbxTbf1QLj01zeaXjEASf83csKTPalnXAn38SP8X82j7fNPirbeACVf9WDvmuXfb_Rkelw/exec",
+    "status": "Live",
+    "category": "Business Tools",
+    "featured": true,
+    "icon": "🔧"
+  },
+  {
+    "id": "bk-community-status",
+    "name": "BK Community Status",
+    "description": "A community outage and status reporting tool built for fast local updates.",
+    "url": "https://script.google.com/macros/s/AKfycbyjGIH9e-q7WqXuOWMoHYAeOKTRMgjVwsG7yTIuvnG2QRfW-P-yIvoJjyu-OPwvKxac/exec",
+    "status": "Live",
+    "category": "Utilities",
+    "featured": true,
+    "icon": "⚡"
+  },
+  {
+    "id": "bk-service-pro",
+    "name": "BK Service Pro",
+    "description": "A service business platform for bookings, customers, jobs and operational workflows.",
+    "url": "#",
+    "status": "Coming Soon",
+    "category": "Business Tools",
+    "featured": true,
+    "icon": "🔧"
+  },
+  {
+    "id": "ai-website-prompt-generator",
+    "name": "AI Website Prompt Generator",
+    "description": "Generate structured website-building prompts from a simple project idea.",
+    "url": "#",
+    "status": "Coming Soon",
+    "category": "AI Tools",
+    "featured": true,
+    "icon": "🤖"
+  },
+  {
+    "id": "bk-teacher_reviews",
+    "name": "BK Teacher Reviews",
+    "description": "Capture pupils termly reports with the ease of AI.",
+    "url": "https://script.google.com/macros/s/AKfycbwgXvqhucEukARgze_CEdmN8YvvGWnS7c2VdcqYQSApzjXfhcAEN7PBnt5J3GnjwGb0rQ/exec",
+    "status": "Live",
+    "category": "Education",
+    "featured": true,
+    "icon": "🎓"
+  },
+  {
+    "id": "bk-edusuite",
+    "name": "BK EduSuite",
+    "description": "Teacher report generation, learner performance tracking and school administration tools.",
+    "url": "https://script.google.com/macros/s/AKfycbxMeLFJzlx9D1cdKweM2vCbSkCwMxSA3QgZEZPX1XCXUERe8eDgJ90WQRjnyTqLrjxn/exec",
+    "status": "Beta",
+    "category": "Education",
+    "featured": true,
+    "icon": "🎓"
+  },
+  {
+    "id": "bk-question-guesser",
+    "name": "BK Question Guesser",
+    "description": "A multiplayer browser quiz game with rounds, timers and live scoring.",
+    "url": "https://script.google.com/macros/s/AKfycbxiV1mASaYR52VeXK1HXlyFU1LEOZ6FrBIVqhLkWegutnFyXXGoDDvmVb61wv2Jjhzl/exec",
+    "status": "Live",
+    "category": "Games",
+    "featured": true,
+    "icon": "🎮"
+  }
 ];
 
 let allProducts = [];
