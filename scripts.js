@@ -29,16 +29,7 @@ const fallbackProducts = [
     "featured": true,
     "icon": "🔧"
   },
-  {
-    "id": "ai-website-prompt-generator",
-    "name": "AI Website Prompt Generator",
-    "description": "Generate structured website-building prompts from a simple project idea.",
-    "url": "#",
-    "status": "Coming Soon",
-    "category": "AI Tools",
-    "featured": true,
-    "icon": "🤖"
-  },
+  { "id": "bk-ai-prompt-builder", "name": "BK AI Prompt Builder", "description": "Help users build better AI prompts by turning simple ideas into clear, structured instructions.", "url": "https://script.google.com/macros/s/AKfycbyPvYTKlRCA3hd-fAgwjg9mwXPMYofJ-COdOwQ2L0twWRoE1GRR0Zcz021z-7aGSXvUsA/exec", "status": "Live", "category": "AI Tools", "featured": true, "icon": "🤖" },
   {
     "id": "bk-teacher_reviews",
     "name": "BK Teacher Reviews",
@@ -149,7 +140,7 @@ function handleProductClick(event, productId, url) {
 
   if (url === '#') {
     event.preventDefault();
-    alert('Be sure to check back later. Coming Soon.');
+    alert('This product link is not added yet. Update products.json with the live Apps Script URL when ready.');
   }
 }
 
