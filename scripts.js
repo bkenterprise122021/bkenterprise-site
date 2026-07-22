@@ -3,7 +3,7 @@ const fallbackProducts = [
     "id": "plumbing-booking-system",
     "name": "Plumbing Booking System",
     "description": "Plumbing booking.",
-    "url": "https://script.google.com/macros/s/AKfycbxTbf1QLj01zeaXjEASf83csKTPalnXAn38SP8X82j7fNPirbeACVf9WDvmuXfb_Rkelw/exec",
+    "url": "/plumbing-booking-system/",
     "status": "Live",
     "category": "Business Tools",
     "featured": true,
@@ -13,7 +13,7 @@ const fallbackProducts = [
     "id": "bk-community-status",
     "name": "BK Community Status",
     "description": "A community outage and status reporting tool built for fast local updates.",
-    "url": "https://script.google.com/macros/s/AKfycbyjGIH9e-q7WqXuOWMoHYAeOKTRMgjVwsG7yTIuvnG2QRfW-P-yIvoJjyu-OPwvKxac/exec",
+    "url": "/bk-community-status/",
     "status": "Live",
     "category": "Utilities",
     "featured": true,
@@ -23,18 +23,27 @@ const fallbackProducts = [
     "id": "bk-service-pro",
     "name": "BK Service Pro",
     "description": "A service business platform for bookings, customers, jobs and operational workflows.",
-    "url": "#",
+    "url": "/bk-service-pro/",
     "status": "Coming Soon",
     "category": "Business Tools",
     "featured": true,
     "icon": "🔧"
   },
-  { "id": "bk-ai-prompt-builder", "name": "BK AI Prompt Builder", "description": "Help users build better AI prompts by turning simple ideas into clear, structured instructions.", "url": "https://script.google.com/macros/s/AKfycbyPvYTKlRCA3hd-fAgwjg9mwXPMYofJ-COdOwQ2L0twWRoE1GRR0Zcz021z-7aGSXvUsA/exec", "status": "Live", "category": "AI Tools", "featured": true, "icon": "🤖" },
   {
-    "id": "bk-teacher_reviews",
+    "id": "bk-ai-prompt-builder",
+    "name": "BK AI Prompt Builder",
+    "description": "Help users build better AI prompts by turning simple ideas into clear, structured instructions.",
+    "url": "/bk-ai-prompt-builder/",
+    "status": "Live",
+    "category": "AI Tools",
+    "featured": true,
+    "icon": "🤖"
+  },
+  {
+    "id": "bk-teacher-reviews",
     "name": "BK Teacher Reviews",
     "description": "Capture pupils termly reports with the ease of AI.",
-    "url": "https://script.google.com/macros/s/AKfycbwgXvqhucEukARgze_CEdmN8YvvGWnS7c2VdcqYQSApzjXfhcAEN7PBnt5J3GnjwGb0rQ/exec",
+    "url": "/bk-teacher-reviews/",
     "status": "Live",
     "category": "Education",
     "featured": true,
@@ -44,7 +53,7 @@ const fallbackProducts = [
     "id": "bk-edusuite",
     "name": "BK EduSuite",
     "description": "Teacher report generation, learner performance tracking and school administration tools.",
-    "url": "https://script.google.com/macros/s/AKfycbxMeLFJzlx9D1cdKweM2vCbSkCwMxSA3QgZEZPX1XCXUERe8eDgJ90WQRjnyTqLrjxn/exec",
+    "url": "/bk-edusuite/",
     "status": "Beta",
     "category": "Education",
     "featured": true,
@@ -54,7 +63,7 @@ const fallbackProducts = [
     "id": "bk-question-guesser",
     "name": "BK Question Guesser",
     "description": "A multiplayer browser quiz game with rounds, timers and live scoring.",
-    "url": "https://script.google.com/macros/s/AKfycbxiV1mASaYR52VeXK1HXlyFU1LEOZ6FrBIVqhLkWegutnFyXXGoDDvmVb61wv2Jjhzl/exec",
+    "url": "/bk-question-guesser/",
     "status": "Live",
     "category": "Games",
     "featured": true,
@@ -119,7 +128,7 @@ function productCard(product) {
   const statusClass = statusClassName(status);
   const url = product.url || '#';
   const disabled = url === '#';
-  const buttonLabel = normalizeStatus(status) === 'live' ? 'Launch App →' : 'Learn More →';
+  const buttonLabel = ['live', 'beta'].includes(normalizeStatus(status)) ? 'Launch App →' : 'Learn More →';
 
   return `
     <article class="product-card reveal is-visible">
@@ -129,7 +138,7 @@ function productCard(product) {
       <p>${escapeHtml(product.description || '')}</p>
       <div class="product-actions">
         <span class="badge ${statusClass}">${escapeHtml(status)}</span>
-        <a class="product-link" href="${escapeAttribute(url)}" target="${disabled ? '_self' : '_blank'}" rel="noopener" onclick="handleProductClick(event, '${escapeAttribute(product.id || product.name || 'product')}', '${escapeAttribute(url)}')">${buttonLabel}</a>
+        <a class="product-link" href="${escapeAttribute(url)}" target="_self" rel="noopener" onclick="handleProductClick(event, '${escapeAttribute(product.id || product.name || 'product')}', '${escapeAttribute(url)}')">${buttonLabel}</a>
       </div>
     </article>
   `;
@@ -140,7 +149,7 @@ function handleProductClick(event, productId, url) {
 
   if (url === '#') {
     event.preventDefault();
-    alert('This product link is not added yet. Update products.json with the live Apps Script URL when ready.');
+    alert('This product is coming soon.');
   }
 }
 

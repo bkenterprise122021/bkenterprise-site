@@ -1,62 +1,59 @@
-# BK Enterprise GitHub Pages Website
+# BK Enterprise GitHub Site - Embedded Product Version
 
-This is the GitHub-ready static version of the BK Enterprise landing page.
+This version changes product buttons so users see clean BK Enterprise URLs instead of direct `script.google.com` URLs.
 
-## Files
+## Clean product URLs
 
-- `index.html` - main website page
-- `styles.css` - website styling
-- `scripts.js` - product loading, search/filter, analytics events
-- `products.json` - edit this file to add or change products
-- `assets/bk-logo.jpg` - original BK Enterprise logo
-- `CNAME` - custom domain setting for GitHub Pages
-- `.nojekyll` - tells GitHub Pages to serve files as-is
+- https://bkenterprise.co.za/plumbing-booking-system/
+- https://bkenterprise.co.za/bk-community-status/
+- https://bkenterprise.co.za/bk-service-pro/
+- https://bkenterprise.co.za/bk-ai-prompt-builder/
+- https://bkenterprise.co.za/bk-teacher-reviews/
+- https://bkenterprise.co.za/bk-edusuite/
+- https://bkenterprise.co.za/bk-question-guesser/
 
-## Important
+## Files/folders added
 
-This is not an Apps Script project. It is a static GitHub Pages website.
-Your product buttons should link to your deployed Apps Script `/exec` URLs.
+- `product-frame.css`
+- One folder per product, each containing its own `index.html`
+- Updated `products.json`
+- Updated `scripts.js`
+- Updated `sitemap.xml`
 
-## How to add product links
+## Important Apps Script step
 
-Open `products.json` and update each product `url` value.
+Each live Apps Script product must allow iframe embedding.
 
-Example:
+In each product's Apps Script project, update `doGet()` to include:
 
-```json
-"url": "https://script.google.com/macros/s/YOUR_DEPLOYMENT_ID/exec"
+```javascript
+function doGet() {
+  return HtmlService.createHtmlOutputFromFile("Index")
+    .setTitle("BK Product")
+    .setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL);
+}
 ```
 
-If a product URL is `#`, the site will show a message saying the link has not been added yet.
+If the app uses templates, use:
 
-## GitHub setup
-
-1. Create a public repository, for example `bkenterprise-site`.
-2. Upload all files from this folder into the repository root.
-3. Go to `Settings > Pages`.
-4. Set source to `Deploy from a branch`.
-5. Select branch `main` and folder `/root`.
-6. Under Custom domain, use `bkenterprise.co.za`.
-7. In Vox DNS, add GitHub Pages DNS records.
-8. When GitHub is ready, enable `Enforce HTTPS`.
-
-## DNS records for Vox
-
-Add these A records for `bkenterprise.co.za.`:
-
-- `185.199.108.153`
-- `185.199.109.153`
-- `185.199.110.153`
-- `185.199.111.153`
-
-Add a CNAME for `www.bkenterprise.co.za.`:
-
-```text
-YOUR-GITHUB-USERNAME.github.io.
+```javascript
+function doGet(e) {
+  return HtmlService.createTemplateFromFile("Index")
+    .evaluate()
+    .setTitle("BK Product")
+    .setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL);
+}
 ```
 
-Replace `YOUR-GITHUB-USERNAME` with your actual GitHub username.
+Then deploy a new web app version:
 
-## Product update
+Deploy > Manage deployments > Edit > New version > Deploy
 
-This version includes the updated product list supplied on 2026-07-15, including BK Teacher Reviews, BK EduSuite and BK Question Guesser.
+## Testing
+
+After uploading to GitHub, test:
+
+1. Homepage product button opens a clean BK URL.
+2. The product app loads inside the page.
+3. The browser address stays on `bkenterprise.co.za/product-name/`.
+4. Use hard refresh if you still see cached old files.
