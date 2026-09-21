@@ -68,5 +68,15 @@
     "category": "Games",
     "featured": true,
     "icon": "🎮"
-  }
+  },
+  {
+  "id": "bk-weekend-get-away-planner",
+  "name": "BK Weekend Get Away Planner",
+  "description": "Plan and organise your perfect weekend getaway with an easy-to-use trip planning tool.",
+  "url": "https://bkenterprise.co.za/bk-weekend-get-away-planner/",
+  "status": "Live",
+  "category": "Travel & Planning",
+  "featured": true,
+  "icon": "🏖️"
+}
 ]
