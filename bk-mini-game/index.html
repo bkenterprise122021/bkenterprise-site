@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BK Mini Games Arcade | BK Enterprise</title>
+  <meta name="description" content="Play BK Mini Games Arcade, a fun browser-based games experience from BK Enterprise.">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" href="../assets/bk-logo.png">
+  <link rel="stylesheet" href="../product-frame.css">
+
+  <!-- Google Analytics GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z32XG414R2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-Z32XG414R2', {
+      page_title: 'BK Mini Games Arcade',
+      page_path: '/bk-mini-game/'
+    });
+  </script>
+
+  <style>
+    .frame-status {
+      min-height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      color: #475569;
+      background: #fff;
+      text-align: center;
+      font-size: 15px;
+    }
+    iframe.app-frame[hidden] { display: none; }
+  </style>
+</head>
+
+<body>
+  <div class="app-shell">
+    <header class="app-topbar">
+      <a class="app-brand" href="../" aria-label="Back to BK Enterprise">
+        <img src="../assets/bk-logo.png" alt="BK Enterprise logo">
+        <span class="brand-text">
+          <strong>BK Enterprise</strong>
+          <span>Cloud • Analytics • AI</span>
+        </span>
+      </a>
+
+      <div class="app-title">
+        <strong>🎮 BK Mini Games Arcade</strong>
+        <span>Games &amp; Entertainment</span>
+      </div>
+
+      <div class="top-actions">
+        <a class="top-link" href="../">Home</a>
+      </div>
+    </header>
+
+    <main class="app-frame-wrap">
+      <div id="frameStatus" class="frame-status" role="status" aria-live="polite">
+        Loading BK Mini Games Arcade...
+      </div>
+
+      <iframe
+        id="productFrame"
+        class="app-frame"
+        title="BK Mini Games Arcade"
+        loading="eager"
+        allow="fullscreen; clipboard-read; clipboard-write"
+        hidden>
+      </iframe>
+    </main>
+  </div>
+
+  <script>
+    // The Apps Script deployment URL is managed in the root products.json.
+    // Keep this ID stable so existing clean links continue working.
+    const PRODUCT_ID = 'bk-mini-game';
+
+    const iframe = document.getElementById('productFrame');
+    const status = document.getElementById('frameStatus');
+
+    fetch('../products.json')
+      .then(response => {
+        if (!response.ok) throw new Error('Could not load products.json');
+        return response.json();
+      })
+      .then(products => {
+        if (!Array.isArray(products)) {
+          throw new Error('products.json must contain a product array');
+        }
+
+        const product = products.find(item => item.id === PRODUCT_ID);
+        if (!product || !product.embedUrl) {
+          throw new Error('BK Mini Games Arcade embedUrl is missing from products.json');
+        }
+
+        iframe.addEventListener('load', () => {
+          iframe.hidden = false;
+          status.hidden = true;
+        }, { once: true });
+
+        iframe.src = product.embedUrl;
+      })
+      .catch(error => {
+        console.error('BK Mini Games Arcade loading error:', error);
+        status.textContent =
+          'BK Mini Games Arcade is temporarily unavailable. Please try again later.';
+      });
+  </script>
+</body>
+</html>
