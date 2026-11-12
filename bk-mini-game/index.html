@@ -22,18 +22,33 @@
   </script>
 
   <style>
-    .frame-status {
-      min-height: 300px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
-      color: #475569;
-      background: #fff;
-      text-align: center;
-      font-size: 15px;
-    }
-    iframe.app-frame[hidden] { display: none; }
+    .app-frame-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.frame-status {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  color: #475569;
+  background: #fff;
+  text-align: center;
+  font-size: 15px;
+}
+
+.frame-status[hidden] {
+  display: none !important;
+}
+
+iframe.app-frame[hidden] {
+  display: none !important;
+}
   </style>
 </head>
 
