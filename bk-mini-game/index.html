@@ -23,32 +23,32 @@
 
   <style>
     .app-frame-wrap {
-  position: relative;
-  overflow: hidden;
-}
+      position: relative;
+      overflow: hidden;
+    }
 
-.frame-status {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  min-height: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
-  color: #475569;
-  background: #fff;
-  text-align: center;
-  font-size: 15px;
-}
+    .frame-status {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      min-height: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      color: #475569;
+      background: #fff;
+      text-align: center;
+      font-size: 15px;
+    }
 
-.frame-status[hidden] {
-  display: none !important;
-}
+    .frame-status[hidden] {
+      display: none !important;
+    }
 
-iframe.app-frame[hidden] {
-  display: none !important;
-}
+    iframe.app-frame[hidden] {
+      display: none !important;
+    }
   </style>
 </head>
 
@@ -112,12 +112,19 @@ iframe.app-frame[hidden] {
           throw new Error('BK Mini Games Arcade embedUrl is missing from products.json');
         }
 
+        // Forward any Score Card challenge parameters (?name=...&score=...&theme=...) to the iframe
+        const targetUrl = new URL(product.embedUrl);
+        const incomingParams = new URLSearchParams(window.location.search);
+        incomingParams.forEach((value, key) => {
+          targetUrl.searchParams.set(key, value);
+        });
+
         iframe.addEventListener('load', () => {
           iframe.hidden = false;
           status.hidden = true;
         }, { once: true });
 
-        iframe.src = product.embedUrl;
+        iframe.src = targetUrl.toString();
       })
       .catch(error => {
         console.error('BK Mini Games Arcade loading error:', error);
