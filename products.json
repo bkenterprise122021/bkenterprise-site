@@ -78,5 +78,16 @@
   "category": "Travel & Planning",
   "featured": true,
   "icon": "🏖️"
+},
+{
+  "id": "bk-mini-game",
+  "name": "BK Mini Games Arcade",
+  "description": "A fun browser-based mini games arcade from BK Enterprise.",
+  "url": "/bk-mini-game/",
+  "embedUrl": "https://script.google.com/macros/s/AKfycbycdAzMiROJDvI1UQ_jWFWzTKCWQbr8GRLw-1a95lZEzy8A9wbcq9j9WflyFsHIaolj7w/exec",
+  "status": "Live",
+  "category": "Games",
+  "featured": true,
+  "icon": "🎮"
 }
 ]
